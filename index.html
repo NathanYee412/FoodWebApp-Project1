@@ -29,15 +29,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm left">
-                    <img src="public/img/1.jpg" alt="1">
+                    <img id="left" src="public/img/1.jpg">
                 </div>
                 <div class="col-sm right">
-                    <img src="public/img/2.jpg" alt="2">
+                    <img id="right" src="public/img/2.jpg">
                 </div>
             </div>
             <div class="row">
-                <button class="col-sm left">This one!</button>
-                <button class="col-sm right">No This one!</button>
+                <button onclick="addVoteLeft()" class="col-sm left">This one!</button>
+                <button onclick="addVoteRight()" class="col-sm right">No This one!</button>
             </div>
         </div>
 
@@ -62,6 +62,59 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- <script src="public/scripts/homePics.js"></script> -->
+    <script>
+        var id1 = "/public/img/1.jpg";
+        var id2 = "/public/img/2.jpg";
+        var id3 = "/public/img/3.jpg";
+        var id4 = "/public/img/4.jpg";
+        var id5 = "/public/img/5.jpg";
+        var id6 = "/public/img/6.jpg";
+        var id7 = "/public/img/7.jpg";
+        var id8 = "/public/img/8.jpg";
+        var counter = 0;
+
+
+        function addVoteLeft() {
+            var leftPics = [id1, id3, id5, id7];
+            var rightPics =[id2, id4, id6, id8];
+            var i = counter + 1;
+
+            console.log("Added vote for Left side " + leftPics[i]);
+            counter += 1;
+
+            document.getElementById("left").src = leftPics[i];
+            document.getElementById("right").src = rightPics[i];
+
+            if (counter === 4) {
+                console.log("send to leaderboard page");
+                window.open("/home/leaderboard", "_self");
+            }
+            if (counter === 4){
+                counter = 0;
+            }
+        }
+
+        function addVoteRight() {
+            var leftPics = [id1, id3, id5, id7];
+            var rightPics =[id2, id4, id6, id8];
+            var i = counter + 1;
+
+            console.log("Added vote for Right side " + rightPics[i]);
+            counter += 1;
+
+            document.getElementById("left").src = leftPics[i];
+            document.getElementById("right").src = rightPics[i];
+
+            if (counter === 4) {
+                console.log("send to leaderboard page");
+                window.open("/home/leaderboard","_self");
+            }
+            if (counter === 4){
+                counter = 0;
+            }
+        }
     </script>
 </body>
 
