@@ -1,8 +1,8 @@
-[{"name":"1.jpg", "votes":1},
-    {"name":"2.jpg", "votes":3},
-    {"name":"3.jpg", "votes":1},
-    {"name":"4.jpg", "votes":5},
-    {"name":"5.jpg", "votes":0},
-    {"name":"6.jpg", "votes":2},
-    {"name":"7.jpg", "votes":10},
-    {"name":"8.jpg", "votes":100}]
+[{"name":"1.jpg", "foodname":"bibimbap", "votes":1},
+    {"name":"2.jpg", "foodname":"pizza", "votes":3},
+    {"name":"3.jpg", "foodname":"meat and asparagus", "votes":1},
+    {"name":"4.jpg", "foodname":"soup", "votes":5},
+    {"name":"5.jpg", "foodname":"steak", "votes":0},
+    {"name":"6.jpg", "foodname":"sandwich", "votes":2},
+    {"name":"7.jpg", "foodname":"burger", "votes":10},
+    {"name":"8.jpg", "foodname":"ice cream", "votes":100}]

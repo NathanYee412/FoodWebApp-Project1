@@ -23,7 +23,7 @@ html
           data.addColumn('number', 'number_of_upvotes');
           jsonData.forEach(function (row) {
             data.addRow([
-            row.name,
+            row.foodname,
             row.votes
             ]);
           });
@@ -53,7 +53,7 @@ html
         a.active(href='/home') Home
         a(href='/home/leaderboard') Leaderboard
         a(href='#about') About
-    #chart_div(style='height: 200px;')
+    #chart_div(style='height: 500px;')
     footer
       div
         h3 CPSC349-01

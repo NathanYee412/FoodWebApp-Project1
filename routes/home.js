@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require("diskdb");
+var path = require('path');
 //var path = require('path');
 //var app = express();
 
@@ -30,12 +31,10 @@ router.get('/leaderboard', checkSignIn, function(req, res) {
     res.render('leaderboard', { title: 'Leaderboard' , name: user.fname + " " + user.lname});
 });
 
-/* get votes.json; the file path needs to be changed when running on different system */
+/* get votes.json. */
 router.get('/votes.json', checkSignIn, function (req, res) {
     db.connect('./data', ['votes']);
-    //res.sendFile(db);
-    res.sendFile('C:/Users/Haowen Yong/Desktop/fall 2020/cpsc349/projects/FoodWebApp-Project1/data/votes.json');
-    // change above line to: res.sendFile('YourPathTo/votes.json');
+    res.sendFile('votes.json', { root: path.join(__dirname, '../data') });
 });
 
 /* GET about page. */
