@@ -17,11 +17,12 @@ function checkSignIn(req, res, next) {
     }
 }
 
+
 /* GET home page. */
 router.get('/', checkSignIn, function(req, res) {
     db.connect('./data', ['users']);
     user = req.session.user; // the logged in user
-    res.render('home', { title: 'Home' , name: user.fname + " " + user.lname});
+    res.render('home', { title: 'Home' , name: user.fname + " " + user.lname, database: db});
 });
 
 /* GET leaderboard page. */
@@ -43,5 +44,6 @@ router.get('/about', checkSignIn, function(req, res) {
     user = req.session.user; // the logged in user
     res.render('about', { title: 'About' , name: user.fname + " " + user.lname});
 });
+
 
 module.exports = router;

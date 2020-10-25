@@ -1,1 +1,49 @@
-extends layout
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+    link(rel='stylesheet' href='/stylesheets/styles.css')
+    link(href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap' rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap' rel='stylesheet')
+    script(type='text/javascript' src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  body
+    .header
+      a.logo(href='/home') Food Wars
+      .header-right
+        a.active(href='/home') Home
+        a(href='/home/leaderboard') Leaderboard
+        a(href='/home/about') About
+    main
+        .container
+            h2 This site is a voting website where you can vote for the meal that is tastier.
+            p The image that you select will have a total vote count which can be seen in the leaderboard page
+            p The leaderboard page shows a bar graph of the total counts for each image. 
+            h2 These are the contenders
+        .container
+            .row
+                .col-sm.left
+                    img#left(src='/img/1.jpg')
+                .col-sm.right
+                    img#right(src='/img/2.jpg')
+            .row
+                .col-sm.left
+                    img#left(src='/img/3.jpg')
+                .col-sm.right
+                    img#right(src='/img/4.jpg')
+            .row
+                .col-sm.left
+                    img#left(src='/img/5.jpg')
+                .col-sm.right
+                    img#right(src='/img/6.jpg')
+            .row
+                .col-sm.left
+                    img#left(src='/img/7.jpg')
+                .col-sm.right
+                    img#right(src='/img/8.jpg')
+        .container
+    footer
+      div
+        h5 CPSC349-01 about page
+        p Created by Brittany Kramer, Nathan Yee, Haowen Yong, and Lexi Reyes

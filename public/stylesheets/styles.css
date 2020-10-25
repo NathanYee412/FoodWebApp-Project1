@@ -108,3 +108,18 @@ footer {
   color: white;
   text-align: center;
 }
+
+h2 {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 200%;
+}
+
+p { 
+    text-align: center;
+}
+
+h5 {
+    padding-top: 15px;
+}
