@@ -32,12 +32,10 @@ router.get('/leaderboard', checkSignIn, function(req, res) {
     res.render('leaderboard', { title: 'Leaderboard' , name: user.fname + " " + user.lname});
 });
 
-/* get votes.json; the file path needs to be changed when running on different system */
+/* get votes.json. */
 router.get('/votes.json', checkSignIn, function (req, res) {
     db.connect('./data', ['votes']);
-    //res.sendFile(db);
     res.sendFile('votes.json', { root: path.join(__dirname, '../data') });
-    // change above line to: res.sendFile('YourPathTo/votes.json');
 });
 
 /* GET about page. */
