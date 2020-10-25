@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require("diskdb");
+var path = require('path');
 //var path = require('path');
 //var app = express();
 
@@ -16,11 +17,12 @@ function checkSignIn(req, res, next) {
     }
 }
 
+
 /* GET home page. */
 router.get('/', checkSignIn, function(req, res) {
     db.connect('./data', ['users']);
     user = req.session.user; // the logged in user
-    res.render('home', { title: 'Home' , name: user.fname + " " + user.lname});
+    res.render('home', { title: 'Home' , name: user.fname + " " + user.lname, database: db});
 });
 
 /* GET leaderboard page. */
@@ -34,7 +36,7 @@ router.get('/leaderboard', checkSignIn, function(req, res) {
 router.get('/votes.json', checkSignIn, function (req, res) {
     db.connect('./data', ['votes']);
     //res.sendFile(db);
-    res.sendFile('C:/Users/Haowen Yong/Desktop/fall 2020/cpsc349/projects/FoodWebApp-Project1/data/votes.json');
+    res.sendFile('votes.json', { root: path.join(__dirname, '../data') });
     // change above line to: res.sendFile('YourPathTo/votes.json');
 });
 
@@ -44,5 +46,6 @@ router.get('/about', checkSignIn, function(req, res) {
     user = req.session.user; // the logged in user
     res.render('about', { title: 'About' , name: user.fname + " " + user.lname});
 });
+
 
 module.exports = router;
